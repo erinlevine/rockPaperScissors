@@ -7,10 +7,10 @@
 <body>
 
 	<div id="game">
-
+	<p>Press r, p or s to start playing!</p>
     </div>
 
-    <h1>Select either R, P, or S to play!</h1>
+    
 
 <!-- Conditions: 
 	1. If player picks rock and computer picks scissors => Player wins.
@@ -50,21 +50,29 @@
         // Alerts the Computer's guess.
         alert("Computer guessed: " + computerGuess);
 
-         if (userGuess == computerGuess) { 
-    	alert("Tie!");
+         if (userGuess == computerGuess) {
+         	ties++ 
     }
     	// Add score to tie
-	    else if (userGuess == "r" && computerGuess == "s") { wins++ }
-	    else if (userGuess == "p" && computerGuess == "r") { wins++ }
-	    else if (userGuess == "s" && computerGuess == "p") { wins++ }
+	    else if (userGuess == "r" && computerGuess == "s") { wins++; }
+	    else if (userGuess == "p" && computerGuess == "r") { wins++; }
+	    else if (userGuess == "s" && computerGuess == "p") { wins++; }
 	    else {
 	    	losses++;
 
 	  	}
 
-	document.write("Wins: " + wins);
-	document.write("Losses: " + losses);
-	document.write("Ties: " + ties);
+	  	var html = "<p>Press r, p or s to start playing!</p>" +
+          "<p>wins: " + wins + "</p>" +
+          "<p>losses: " + losses + "</p>" +
+          "<p>ties: " + ties + "</p>";
+
+          // Injecting the HTML we just created into our div and updating the game information on our page.
+          document.querySelector("#game").innerHTML = html;
+
+	// document.write("Wins: " + wins);
+	// document.write("Losses: " + losses);
+	// document.write("Ties: " + ties);
 
 
       }; // this closes function(event)
