@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Rock Paper Scissors Assignment // W2D2</title>
+</head>
+<body>
+
+	<div id="game">
+
+    </div>
+
+    <h1>Select either R, P, or S to play!</h1>
+
+<!-- Conditions: 
+	1. If player picks rock and computer picks scissors => Player wins.
+	2. If player picks rock and computer picks paper => Computer wins.
+	
+	3. If player picks scissors and computer picks paper => Player wins.
+	4. If player picks scissors and computer picks rock => Computer wins.
+	
+	5. If player picks paper and computer picks rock => Player wins.
+	6. If play picks paper and computer picks scissors => Computer wins.
+	
+	7. If player and computer pick the same => tie. -->
+
+	<script type="text/javascript">
+
+		// Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+      var options = ["r", "p", "s"];
+
+      var wins = 0;
+
+      var losses = 0;
+
+      var ties = 0;
+
+      // This function is run whenever the user presses a key.
+      document.onkeyup = function(event) {
+
+        // Determines which key was pressed
+        var userGuess = event.key;
+
+        // Alerts the key the user pressed (userGuess).
+        alert("User guessed: " + userGuess);
+
+        // Randomly chooses a choice from the options array. This is the Computer's guess.
+        var computerGuess = options[Math.floor(Math.random() * options.length)];
+
+        // Alerts the Computer's guess.
+        alert("Computer guessed: " + computerGuess);
+
+         if (userGuess == computerGuess) { 
+    	alert("Tie!");
+    }
+    	// Add score to tie
+	    else if (userGuess == "r" && computerGuess == "s") { wins++ }
+	    else if (userGuess == "p" && computerGuess == "r") { wins++ }
+	    else if (userGuess == "s" && computerGuess == "p") { wins++ }
+	    else {
+	    	losses++;
+
+	  	}
+
+	document.write("Wins: " + wins);
+	document.write("Losses: " + losses);
+	document.write("Ties: " + ties);
+
+
+      }; // this closes function(event)
+	
+	// if (userGuess =)
+
+
+
+
+      // }
+      // // Else if the user was born after 1995, alert "No Sake for you!"
+      // else if (birthYear > 1995) {
+      //   alert("No Sake for you!");
+      // }
+      // // If neither of the previous conditions was true (birthYear === 1995) we alert "You inched by!"
+      // else {
+      //   alert("You inched by! Sake Sake Sake!");
+      // }
+
+		
+
+	</script>
+	
+</body>
+</html>
